@@ -1,0 +1,22 @@
+{
+    "collectionName": "components_properties_agents",
+    "info": {
+        "name": "agent",
+        "description": "Real estate agent information for the property"
+    },
+    "options": {},
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "contactPhone": {
+            "type": "string"
+        },
+        "email": {
+            "type": "email"
+        },
+        "agency": {
+            "type": "string"
+        }
+    }
+}

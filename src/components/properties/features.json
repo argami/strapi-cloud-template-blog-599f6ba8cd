@@ -1,0 +1,33 @@
+{
+    "collectionName": "components_properties_features",
+    "info": {
+        "name": "features",
+        "description": "Luxury features and amenities of the property"
+    },
+    "options": {},
+    "attributes": {
+        "pool": {
+            "type": "string",
+            "enum": [
+                "indoor",
+                "outdoor",
+                "none"
+            ]
+        },
+        "gym": {
+            "type": "boolean"
+        },
+        "homeTheater": {
+            "type": "boolean"
+        },
+        "securityFeatures": {
+            "type": "boolean"
+        },
+        "smartHomeFeatures": {
+            "type": "boolean"
+        },
+        "additionalFacilities": {
+            "type": "text"
+        }
+    }
+}

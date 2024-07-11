@@ -1,0 +1,28 @@
+{
+    "collectionName": "components_properties_locations",
+    "info": {
+        "name": "location",
+        "description": "Property location details"
+    },
+    "options": {},
+    "attributes": {
+        "address": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        },
+        "state": {
+            "type": "string"
+        },
+        "postalCode": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        },
+        "geo": {
+            "type": "json"
+        }
+    }
+}

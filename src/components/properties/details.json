@@ -1,0 +1,33 @@
+{
+    "collectionName": "components_properties_details",
+    "info": {
+        "name": "details",
+        "description": "Detailed information about the property"
+    },
+    "options": {},
+    "attributes": {
+        "bedrooms": {
+            "type": "integer"
+        },
+        "bathrooms": {
+            "type": "integer"
+        },
+        "totalArea": {
+            "type": "float"
+        },
+        "lotSize": {
+            "type": "float"
+        },
+        "yearBuilt": {
+            "type": "integer"
+        },
+        "propertyCondition": {
+            "type": "string",
+            "enum": [
+                "new",
+                "renovated",
+                "needs work"
+            ]
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "collectionName": "components_properties_market_info",
+    "info": {
+        "name": "marketInfo",
+        "description": "Market information about the property"
+    },
+    "options": {},
+    "attributes": {
+        "dateListed": {
+            "type": "date"
+        },
+        "dateSold": {
+            "type": "date"
+        },
+        "historicalPricingData": {
+            "type": "text"
+        }
+    }
+}
