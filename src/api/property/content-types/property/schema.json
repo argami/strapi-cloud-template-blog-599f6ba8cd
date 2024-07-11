@@ -1,76 +1,94 @@
 {
-    "kind": "collectionType",
-    "collectionName": "properties",
-    "info": {
-        "singularName": "property",
-        "pluralName": "properties",
-        "displayName": "Property"
-    },
-    "options": {
-        "draftAndPublish": true
-    },
-    "pluginOptions": {
-        "i18n": {
-            "localized": true
-        }
-    },
-    "attributes": {
-        "title": {
-            "type": "string",
-            "required": true
-        },
-        "description": {
-            "type": "text",
-            "required": true
-        },
-        "price": {
-            "type": "float",
-            "required": true
-        },
-        "propertyType": {
-            "type": "string",
-            "required": true
-        },
-        "status": {
-            "type": "string",
-            "enum": [
-                "active",
-                "sold",
-                "under offer"
-            ],
-            "required": true
-        },
-        "location": {
-            "type": "component",
-            "repeatable": false,
-            "component": "properties.location"
-        },
-        "details": {
-            "type": "component",
-            "repeatable": false,
-            "component": "properties.details"
-        },
-        "features": {
-            "type": "component",
-            "repeatable": true,
-            "component": "properties.features"
-        },
-        "photos": {
-            "type": "media",
-            "multiple": true
-        },
-        "videoTour": {
-            "type": "string"
-        },
-        "agent": {
-            "type": "component",
-            "repeatable": false,
-            "component": "properties.agent"
-        },
-        "marketInfo": {
-            "type": "component",
-            "repeatable": false,
-            "component": "properties.market-info"
-        }
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "singularName": "property",
+    "pluralName": "properties",
+    "displayName": "Property",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
     }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "price": {
+      "type": "float",
+      "required": true
+    },
+    "propertyType": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "sold",
+        "under offer"
+      ],
+      "required": true
+    },
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "properties.location"
+    },
+    "details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "properties.details"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "properties.features"
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "files"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "videoTour": {
+      "type": "string"
+    },
+    "agent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "properties.agent"
+    },
+    "marketInfo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "properties.market-info"
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::brand.brand",
+      "inversedBy": "properties"
+    }
+  }
 }

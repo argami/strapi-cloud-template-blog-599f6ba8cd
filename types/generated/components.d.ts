@@ -24,7 +24,13 @@ export interface PropertiesLocation extends Schema.Component {
     city: Attribute.String;
     state: Attribute.String;
     postalCode: Attribute.String;
-    country: Attribute.String;
+    country: Attribute.String &
+      Attribute.CustomField<'plugin::country-select.country'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     geo: Attribute.JSON;
   };
 }
