@@ -21,7 +21,6 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
-    "strapi-chatgpt": "^1.0.2",
     "strapi-location-field-plugin": "^1.2.3",
     "strapi-phone-validator": "^0.3.2",
     "strapi-plugin-country-select": "^1.0.3",
