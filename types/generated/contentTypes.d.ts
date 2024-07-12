@@ -362,136 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiBrandBrand extends Schema.CollectionType {
-  collectionName: 'brands';
-  info: {
-    singularName: 'brand';
-    pluralName: 'brands';
-    displayName: 'Brand';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Name: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Description: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    properties: Attribute.Relation<
-      'api::brand.brand',
-      'oneToMany',
-      'api::property.property'
-    >;
-    country: Attribute.String &
-      Attribute.CustomField<'plugin::country-select.country'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::brand.brand',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::brand.brand',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::brand.brand',
-      'oneToMany',
-      'api::brand.brand'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiPropertyProperty extends Schema.CollectionType {
-  collectionName: 'properties';
-  info: {
-    singularName: 'property';
-    pluralName: 'properties';
-    displayName: 'Property';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    price: Attribute.Float & Attribute.Required;
-    propertyType: Attribute.String & Attribute.Required;
-    status: Attribute.String & Attribute.Required;
-    location: Attribute.Component<'properties.location'>;
-    details: Attribute.Component<'properties.details'>;
-    features: Attribute.Component<'properties.features', true>;
-    photos: Attribute.Media<'images' | 'videos' | 'files', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    videoTour: Attribute.String;
-    agent: Attribute.Component<'properties.agent'>;
-    marketInfo: Attribute.Component<'properties.market-info'>;
-    brand: Attribute.Relation<
-      'api::property.property',
-      'manyToOne',
-      'api::brand.brand'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::property.property',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::property.property',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::property.property',
-      'oneToMany',
-      'api::property.property'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -959,6 +829,183 @@ export interface PluginEntityNotesNote extends Schema.CollectionType {
   };
 }
 
+export interface ApiAmenityAmenity extends Schema.CollectionType {
+  collectionName: 'amenities';
+  info: {
+    singularName: 'amenity';
+    pluralName: 'amenities';
+    displayName: 'Amenities';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    amenity_id: Attribute.String & Attribute.Required;
+    Name: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    parent: Attribute.Relation<
+      'api::amenity.amenity',
+      'oneToOne',
+      'api::amenity.amenity'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::amenity.amenity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::amenity.amenity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::amenity.amenity',
+      'oneToMany',
+      'api::amenity.amenity'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiBrandBrand extends Schema.CollectionType {
+  collectionName: 'brands';
+  info: {
+    singularName: 'brand';
+    pluralName: 'brands';
+    displayName: 'Brand';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Name: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    properties: Attribute.Relation<
+      'api::brand.brand',
+      'oneToMany',
+      'api::property.property'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::brand.brand',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::brand.brand',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::brand.brand',
+      'oneToMany',
+      'api::brand.brand'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiPropertyProperty extends Schema.CollectionType {
+  collectionName: 'properties';
+  info: {
+    singularName: 'property';
+    pluralName: 'properties';
+    displayName: 'Property';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    price: Attribute.Float & Attribute.Required;
+    propertyType: Attribute.String & Attribute.Required;
+    status: Attribute.String & Attribute.Required;
+    location: Attribute.Component<'properties.location'>;
+    details: Attribute.Component<'properties.details'>;
+    features: Attribute.Component<'properties.features', true>;
+    photos: Attribute.Media<'images' | 'videos' | 'files', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    videoTour: Attribute.String;
+    agent: Attribute.Component<'properties.agent'>;
+    marketInfo: Attribute.Component<'properties.market-info'>;
+    brand: Attribute.Relation<
+      'api::property.property',
+      'manyToOne',
+      'api::brand.brand'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::property.property',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::property.property',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::property.property',
+      'oneToMany',
+      'api::property.property'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -969,8 +1016,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::brand.brand': ApiBrandBrand;
-      'api::property.property': ApiPropertyProperty;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -980,6 +1025,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::entity-notes.note': PluginEntityNotesNote;
+      'api::amenity.amenity': ApiAmenityAmenity;
+      'api::brand.brand': ApiBrandBrand;
+      'api::property.property': ApiPropertyProperty;
     }
   }
 }
